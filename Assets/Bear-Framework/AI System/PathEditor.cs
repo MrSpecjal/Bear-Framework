@@ -12,7 +12,6 @@ namespace BearFramework.ExtendedUnityEditor
 
         private void OnDrawGizmos()
         {
-
             Gizmos.color = pathColor;
             path = GetComponentsInChildren<Transform>();
             waypoints.Clear();

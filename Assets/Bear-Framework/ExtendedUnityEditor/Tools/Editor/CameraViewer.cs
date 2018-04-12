@@ -8,10 +8,9 @@ public class CameraViewer : EditorWindow
     RenderTexture renderTexture, originalTarget;
 
     [MenuItem("Bear Framework/Tools/Camera View")]
-    static void Launch()
+    static void Init()
     {
         EditorWindow editorWindow = GetWindow(typeof(CameraViewer));
-
         editorWindow.Show();
     }
 

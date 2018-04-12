@@ -4,44 +4,38 @@ using System.Collections;
 
 namespace BearFramework.Tools
 {
-
     public class FindObjects : ScriptableWizard
     {
-        //search types
         public enum SearchType
         {
             Name,
             Component,
             Tag
         }
-        //query parameters
+
         public string searchFor = "";
         public SearchType searchBy = SearchType.Name;
         public bool caseSensitive = false;
         public bool wholeWord = false;
         public bool inSelectionOnly = false;
-        //stored parameters and results for Find Next
         static string lastSearch = "";
         static SearchType lastSearchType = SearchType.Name;
         static bool lastSearchWhole = false;
         static ArrayList foundItems;
         static int foundIndex = -1;
 
-        //Menu item starts wizard
         [MenuItem("Bear Framework/> Find... %&f")]
 
         static void FindMenuItem()
         {
             ScriptableWizard.DisplayWizard("Find", typeof(FindObjects), "Find", "");
         }
-        //Main function
+        
         void OnWizardCreate()
-        {
-            //set static records
+        {            
             lastSearch = searchFor;
             lastSearchType = searchBy;
             lastSearchWhole = wholeWord;
-            //search space and results
             Object[] allObjects;
             foundItems = new ArrayList();
 
@@ -51,7 +45,7 @@ namespace BearFramework.Tools
                 allObjects = FindObjectsOfTypeAll(typeof(GameObject));
 
             if (searchBy == SearchType.Name)
-            {//name comparison
+            {
                 if (wholeWord)
                 {
                     if (caseSensitive)
@@ -106,7 +100,7 @@ namespace BearFramework.Tools
                 }
             }
             else if (searchBy == SearchType.Component)
-            { //component comparison
+            { 
                 foreach (GameObject objectByType in allObjects)
                     if (objectByType.GetComponent(lastSearch))
                         foundItems.Add(objectByType);
@@ -147,7 +141,6 @@ namespace BearFramework.Tools
         }
         void OnWizardUpdate()
         {
-            //Make sure there is a search string
             if (searchFor.Equals(""))
             {
                 errorString = "Enter a search and push enter";
@@ -158,7 +151,6 @@ namespace BearFramework.Tools
                 errorString = "";
                 isValid = true;
             }
-            //make it obvious that you need an exact match for a Component search
             if (searchBy == SearchType.Name)
             {
                 helpString = "";
@@ -172,7 +164,6 @@ namespace BearFramework.Tools
                 helpString = "Component searches always require an exact match";
             }
         }
-        //Next Result menu item
         [MenuItem("Bear Framework/> Next Result %g")]
 
         static void NextResultMenuItem()
@@ -182,14 +173,12 @@ namespace BearFramework.Tools
             SelectObject(foundIndex);
             AnnounceResult();
         }
-        //Next is only available if there was a previous successful search
         [MenuItem("Bear Framework/> Next Result %g", true)]
 
         static bool ValidateNextResult()
         {
             return foundIndex > -1;
         }
-        //Previous Result menu item
         [MenuItem("Bear Framework/> Previous Result #%g")]
 
         static void PreviousResultMenuItem()
@@ -199,20 +188,17 @@ namespace BearFramework.Tools
             SelectObject(foundIndex);
             AnnounceResult();
         }
-        //Find Next is only available if there was a previous successful search
         [MenuItem("Bear Framework/> Previous Result #%g", true)]
 
         static bool ValidatePreviousResult()
         {
             return foundIndex > -1;
         }
-        //tool for setting the selection by index in search results
         static void SelectObject(int newSelection)
         {
             Object[] newSelectionArray = { foundItems[newSelection] as Object };
             Selection.objects = newSelectionArray;
         }
-        //Identifies the current search result
         static void AnnounceResult()
         {
             if (lastSearchType == SearchType.Component)

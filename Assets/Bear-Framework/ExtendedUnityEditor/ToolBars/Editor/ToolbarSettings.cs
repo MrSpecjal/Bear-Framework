@@ -3,6 +3,6 @@ namespace BearFramework.Toolbars
 {
     public class ToolbarSettings : ScriptableObject
     {
-        public bool m_isVertical;
+        public bool isVertical;
     }
 }

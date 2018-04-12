@@ -6,7 +6,6 @@ namespace BearFramework.Tools
 {
     public class HideFlagsExplorer : EditorWindow
     {
-
         [MenuItem("Bear Framework/Tools/Hide Flags Explorer")]
         static void Init()
         {

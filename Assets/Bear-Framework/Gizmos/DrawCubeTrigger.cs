@@ -9,35 +9,38 @@ namespace BearFramework.ExtendedUnityEditor
         public Color standardColor;
         public Color onSelectedColor;
 
-        BoxCollider m_BoxCollider;
+        BoxCollider boxCollider;
         BoxCollider BoxCollider
         {
             get
             {
-                if (m_BoxCollider == null)
+                if (boxCollider == null)
                 {
-                    m_BoxCollider = GetComponent<BoxCollider>();
+                    boxCollider = GetComponent<BoxCollider>();
                 }
 
-                return m_BoxCollider;
+                return boxCollider;
             }
         }
 
         void OnDrawGizmos()
         {
-            Gizmos.color = new Color(standardColor.r, standardColor.g, standardColor.b, 1f);
-            Gizmos.DrawWireCube(transform.position + BoxCollider.center, BoxCollider.size);
-
-            Gizmos.color = new Color(standardColor.r, standardColor.g, standardColor.b, 0.3f);
-            Gizmos.DrawCube(transform.position + BoxCollider.center, BoxCollider.size);
+            DrawGizmo(standardColor);
         }
 
         void OnDrawGizmosSelected()
         {
-            Gizmos.color = new Color(onSelectedColor.r, onSelectedColor.g, onSelectedColor.b, 1f);
+            DrawGizmo(onSelectedColor);
+        }
+
+        void DrawGizmo(Color color)
+        {
+            color.a = 1f;
+            Gizmos.color = color;
             Gizmos.DrawWireCube(transform.position + BoxCollider.center, BoxCollider.size);
 
-            Gizmos.color = new Color(onSelectedColor.r, onSelectedColor.g, onSelectedColor.b, 0.3f);
+            color.a = 0.3f;
+            Gizmos.color = color;
             Gizmos.DrawCube(transform.position + BoxCollider.center, BoxCollider.size);
         }
     }

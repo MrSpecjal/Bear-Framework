@@ -2,14 +2,11 @@
 # Bear Framework
 Simple framework written in c# for Unity Engine.
 
-## Getting Started
+# Getting Started
 
 This framework include essentials script for Unity and useful editor tools.
 
-## Installing
-
-###While you opened your project, double click on Beard Framework.unitypackage to import package.
-#Editor Tools
+## Editor Tools
 -[Path Editor] (https://github.com/MrSpecjal/Bear-Framework/tree/master/Assets/Bear-Framework/AI%20System/) (For AI system)
 -[Extended Hierarchy] (https://github.com/MrSpecjal/Bear-Framework/tree/master/Assets/Bear-Framework/ExtendedUnityEditor/Editor/)
 -[UI Toolbar] (https://github.com/MrSpecjal/Bear-Framework/tree/master/Assets/Bear-Framework/ExtendedUnityEditor/ToolBars/Editor/)
@@ -23,12 +20,12 @@ This framework include essentials script for Unity and useful editor tools.
 -[Drawing Cube Collider] (https://github.com/MrSpecjal/Bear-Framework/tree/master/Assets/Bear-Framework/Gizmos)
 -[Localization System] (https://github.com/MrSpecjal/Bear-Framework/tree/master/Assets/Bear-Framework/Localization)
 
-#Events Scripts
+## Events Scripts
 -[Basic Methods Events Manager] (https://github.com/MrSpecjal/Bear-Framework/tree/master/Assets/Bear-Framework/Events)
 -[Events Manager] (https://github.com/MrSpecjal/Bear-Framework/tree/master/Assets/Bear-Framework/Events)
 -[Trigger Events Manager] (https://github.com/MrSpecjal/Bear-Framework/tree/master/Assets/Bear-Framework/Events)
 
-#Essentials Scripts
+## Essentials Scripts
 -[Play Sound] (https://github.com/MrSpecjal/Bear-Framework/tree/master/Assets/Bear-Framework/Miscellaneous)
 -[Timer] (https://github.com/MrSpecjal/Bear-Framework/tree/master/Assets/Bear-Framework/Miscellaneous/Time/)
 -[Destroy Object] (https://github.com/MrSpecjal/Bear-Framework/tree/master/Assets/Bear-Framework/Miscellaneous)
@@ -38,16 +35,20 @@ This framework include essentials script for Unity and useful editor tools.
 -[Play Animation] (https://github.com/MrSpecjal/Bear-Framework/tree/master/Assets/Bear-Framework/Miscellaneous)
 -[Basic CharacterController Based Player Controller] (https://github.com/MrSpecjal/Bear-Framework/tree/master/Assets/Bear-Framework/Player)
 
-#[Shaders]  (https://github.com/MrSpecjal/Bear-Framework/tree/master/Assets/Bear-Framework/Shaders)
+## [Shaders]  (https://github.com/MrSpecjal/Bear-Framework/tree/master/Assets/Bear-Framework/Shaders)
 -Flag Shader
 -Snow Shader
 -Moss Shader
 
-## Authors
+# Installing
+
+While you opened your project, double click on Beard Framework.unitypackage to import package.
+
+# Authors
 
 * **Szymon Miś** - [MrSpecjal](https://github.com/MrSpecjal)
 
 
-## License
+# License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.

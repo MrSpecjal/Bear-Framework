@@ -27,7 +27,7 @@ The project is still work in progress
 * [Trigger Events Manager](https://github.com/MrSpecjal/Bear-Framework/tree/master/Assets/Bear-Framework/Events)
 
 ## Essentials Scripts
-8 [Play Sound](https://github.com/MrSpecjal/Bear-Framework/tree/master/Assets/Bear-Framework/Miscellaneous)
+* [Play Sound](https://github.com/MrSpecjal/Bear-Framework/tree/master/Assets/Bear-Framework/Miscellaneous)
 * [Timer](https://github.com/MrSpecjal/Bear-Framework/tree/master/Assets/Bear-Framework/Miscellaneous/Time/)
 * [Destroy Object](https://github.com/MrSpecjal/Bear-Framework/tree/master/Assets/Bear-Framework/Miscellaneous)
 * [Hide Object](https://github.com/MrSpecjal/Bear-Framework/tree/master/Assets/Bear-Framework/Miscellaneous)
@@ -36,10 +36,10 @@ The project is still work in progress
 * [Play Animation](https://github.com/MrSpecjal/Bear-Framework/tree/master/Assets/Bear-Framework/Miscellaneous)
 * [Basic CharacterController Based Player Controller](https://github.com/MrSpecjal/Bear-Framework/tree/master/Assets/Bear-Framework/Player)
 
-## [Shaders](https://github.com/MrSpecjal/Bear-Framework/tree/master/Assets/Bear-Framework/Shaders)
-* Flag Shader
-* Snow Shader
-* Moss Shader
+## Shaders
+* [Flag Shader](https://github.com/MrSpecjal/Bear-Framework/tree/master/Assets/Bear-Framework/Shaders)
+* [Snow Shader](https://github.com/MrSpecjal/Bear-Framework/tree/master/Assets/Bear-Framework/Shaders)
+* [Moss Shader](https://github.com/MrSpecjal/Bear-Framework/tree/master/Assets/Bear-Framework/Shaders)
 
 # Installing
 

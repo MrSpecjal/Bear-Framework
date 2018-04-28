@@ -1,6 +1,4 @@
-﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
-
-Shader "WindEngine/Flag"
+﻿Shader "BearFramework/Flag"
 {
 	Properties
 	{
@@ -31,7 +29,6 @@ Shader "WindEngine/Flag"
 	fixed4 _LightColor0;
 	float _Ambient;
 
-	// Compute the diffuse light
 	fixed3 diffuseLambert(float3 normal)
 	{
 		float diffuse = max(_Ambient, dot(normalize(normal), _WorldSpaceLightPos0.xyz));
@@ -41,7 +38,6 @@ Shader "WindEngine/Flag"
 	float _WaveStrength;
 	float _WaveSpeed;
 
-	// Deformation
 	float4 movement(float4 pos, float2 uv) {
 		float sinOff = (pos.x + pos.y + pos.z) * _WaveStrength;
 		float t = _Time.y * _WaveSpeed;
@@ -65,16 +61,13 @@ Shader "WindEngine/Flag"
 
 	fixed4 frag(v2f i) : SV_Target{
 		fixed4 col = tex2D(_MainTex, i.uv);
-
-	// Compute the new normal;
+	
 	float3 pos0 = movement(float4(i.vertex.x, i.vertex.y, i.vertex.z, i.vertex.w), i.uv).xyz;
 	float3 pos1 = movement(float4(i.vertex.x + 0.01, i.vertex.y, i.vertex.z, i.vertex.w), i.uv).xyz;
 	float3 pos2 = movement(float4(i.vertex.x, i.vertex.y, i.vertex.z + 00.1, i.vertex.w), i.uv).xyz;
 
-	// Normal in model space
 	float3 normal = cross(normalize(pos2 - pos0), normalize(pos1 - pos0));
 
-	// Normal in world space
 	float3 worldNormal = mul(normal, (float3x3) unity_WorldToObject);
 
 	col.rgb *= diffuseLambert(worldNormal);

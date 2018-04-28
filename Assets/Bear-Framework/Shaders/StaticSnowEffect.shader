@@ -1,4 +1,4 @@
-﻿Shader "WindEngine/StaticSnowEffect" {
+﻿Shader "BearFramework/StaticSnowEffect" {
 	Properties{
 		_SnowColor("Snow color", Color) = (1, 1, 1, 1)
 		_MainTex("MainTexture", 2D) = "white" {}

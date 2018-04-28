@@ -1,7 +1,4 @@
-﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
-// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
-
-Shader "WindEngine/StaticMossEffect" {
+﻿Shader "BearFramework/StaticMossEffect" {
 	Properties{
 		_MainTex("Main texture", 2D) = "white" {}
 	_MossTex("Moss texture", 2D) = "gray" {}
